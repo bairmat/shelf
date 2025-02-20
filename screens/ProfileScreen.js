@@ -70,12 +70,24 @@ const ProfileScreen = ({ navigation }) => {
   };
 
   const pickImage = async () => {
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    if (status !== "granted") {
+      alert("Permission to access media library is required!");
+      return;
+    }
+
+    console.log("Profile picture tapped! Launching Image Picker...");
+
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaType.Images,
+      mediaTypes: [ImagePicker.MediaType.IMAGE],
       allowsEditing: true,
       aspect: [1, 1],
       quality: 1,
     });
+
+    console.log("Image Picker result:", result);
+
 
     if (!result.canceled) {
       const selectedImage = result.assets[0].uri;

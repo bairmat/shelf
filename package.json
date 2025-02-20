@@ -18,7 +18,7 @@
     "axios": "^1.7.9",
     "barcode-reader": "^1.6.1",
     "expo": "~52.0.31",
-    "expo-image-picker": "~16.0.5",
+    "expo-image-picker": "~16.0.6",
     "expo-status-bar": "~2.0.1",
     "firebase": "^11.3.0",
     "quagga": "^0.6.16",
